@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in — LabTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('labtrack-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle theme-toggle--floating" type="button" aria-label="Switch to dark theme">☾</button>
+  <main class="centered">
+    <section class="card login-card" aria-labelledby="login-heading">
+      <h1 id="login-heading" style="margin:0 0 0.25rem">LabTrack</h1>
+      <p class="muted" style="margin:0 0 1rem">Instructor log in — student lab progress tracker</p>
+      <form id="login-form">
+        <label>
+          Username
+          <input type="text" id="username" autocomplete="username" required>
+        </label>
+        <label>
+          Password
+          <input type="password" id="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">Log in</button>
+      </form>
+      <p id="login-error" class="error" role="alert" hidden></p>
+      <p class="muted" style="margin-top:1rem">Demo account — username <strong>instructor</strong>, password <strong>instructor123</strong>. Change it in Settings after logging in.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

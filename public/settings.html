@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — LabTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('labtrack-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">LabTrack</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="labs.html">Labs &amp; Curriculum</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="user-chip"><span id="nav-username"></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button><button id="logout-btn" class="secondary small" type="button">Log out</button></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Settings</h1>
+    <p class="page-subtitle">Cohorts, grading thresholds, your password and report exports.</p>
+    <p id="page-error" class="error" role="alert" hidden></p>
+    <p id="page-success" class="success" role="status" hidden></p>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="cohorts-heading">
+        <h2 id="cohorts-heading">Cohorts</h2>
+        <ul class="clean-list" id="cohort-list"><li class="muted">Loading…</li></ul>
+        <form class="form-row" id="add-cohort-form" style="margin-top:1rem">
+          <label>
+            New cohort
+            <input type="text" id="cohort-name" placeholder="e.g. Spring 2027" required>
+          </label>
+          <button type="submit">Add cohort</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="grading-heading">
+        <h2 id="grading-heading">Grading</h2>
+        <form class="form-row" id="grading-form">
+          <label>
+            Pass mark (0–100)
+            <input type="number" id="pass-mark" min="0" max="100" step="1" required>
+          </label>
+          <label>
+            At-risk progress (0–100)
+            <input type="number" id="at-risk-progress" min="0" max="100" step="1" required>
+          </label>
+          <button type="submit">Save grading</button>
+        </form>
+        <p class="muted">Students below the pass mark, or under the at-risk progress threshold, appear on the Dashboard's at-risk list.</p>
+      </section>
+    </div>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="password-heading">
+        <h2 id="password-heading">Change password</h2>
+        <form class="form-row" id="password-form">
+          <label>
+            Current password
+            <input type="password" id="current-password" autocomplete="current-password" required>
+          </label>
+          <label>
+            New password
+            <input type="password" id="new-password" autocomplete="new-password" required minlength="8">
+          </label>
+          <button type="submit">Change password</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="export-heading">
+        <h2 id="export-heading">Export reports</h2>
+        <p><a class="btn secondary" href="/api/export/progress.csv">Download progress report (CSV)</a></p>
+        <p><a class="btn secondary" href="/api/export/attendance.csv">Download attendance report (CSV)</a></p>
+        <p class="muted">Exports open as downloads — they carry the same login session as the app.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>LabTrack v2 — Node.js + Express API, SQLite database, session auth.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

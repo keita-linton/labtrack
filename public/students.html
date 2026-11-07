@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students — LabTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('labtrack-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">LabTrack</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="labs.html">Labs &amp; Curriculum</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="user-chip"><span id="nav-username"></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button><button id="logout-btn" class="secondary small" type="button">Log out</button></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Students</h1>
+    <p class="page-subtitle">Search, filter and sort the class; open a student to grade labs and take attendance.</p>
+    <p id="page-error" class="error" role="alert" hidden></p>
+
+    <section class="card" aria-label="Filters">
+      <form class="form-row" id="filter-form">
+        <label>
+          Search
+          <input type="search" id="filter-search" placeholder="Name, email or cohort">
+        </label>
+        <label>
+          Cohort
+          <select id="filter-cohort"><option value="">All cohorts</option></select>
+        </label>
+        <label>
+          Sort by
+          <select id="filter-sort">
+            <option value="name">Name</option>
+            <option value="progress">Progress</option>
+            <option value="score">Average score</option>
+          </select>
+        </label>
+        <label>
+          Order
+          <select id="filter-order">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </label>
+        <button type="submit">Apply</button>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="list-heading">
+      <h2 id="list-heading">Class list</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Student</th><th>Cohort</th><th>Progress</th><th>Avg score</th><th>Attendance</th><th></th></tr></thead>
+          <tbody id="student-rows"><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="muted" id="pagination-info"></p>
+      <div class="form-row">
+        <button type="button" id="prev-page" class="secondary small">Previous</button>
+        <button type="button" id="next-page" class="secondary small">Next</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a student</h2>
+      <form class="form-row" id="add-student-form">
+        <label>
+          Name
+          <input type="text" id="student-name" placeholder="e.g. Jordan Lee" required>
+        </label>
+        <label>
+          Email
+          <input type="email" id="student-email" placeholder="jordan.lee@example.com">
+        </label>
+        <label>
+          Cohort
+          <select id="student-cohort"><option value="">No cohort</option></select>
+        </label>
+        <button type="submit">Add student</button>
+      </form>
+      <p id="form-error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section class="card" id="detail-card" aria-labelledby="detail-heading" hidden>
+      <h2 id="detail-heading">Student detail</h2>
+      <div id="detail-body"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>LabTrack v2 — Node.js + Express API, SQLite database, session auth.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="students.js"></script>
+</body>
+</html>

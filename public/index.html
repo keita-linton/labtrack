@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — LabTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('labtrack-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">LabTrack</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="labs.html">Labs &amp; Curriculum</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="user-chip"><span id="nav-username"></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button><button id="logout-btn" class="secondary small" type="button">Log out</button></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-subtitle">Class overview — completion, grades, attendance and who needs attention.</p>
+    <p id="page-error" class="error" role="alert" hidden></p>
+
+    <section class="grid-3" aria-label="Class statistics">
+      <div class="card stat-card"><div class="stat-value" id="stat-students">—</div><div class="stat-label">Students</div></div>
+      <div class="card stat-card"><div class="stat-value" id="stat-labs">—</div><div class="stat-label">Labs assigned</div><div class="stat-sub" id="stat-labs-sub"></div></div>
+      <div class="card stat-card"><div class="stat-value" id="stat-completion">—</div><div class="stat-label">Labs complete</div></div>
+      <div class="card stat-card"><div class="stat-value" id="stat-score">—</div><div class="stat-label">Average score</div><div class="stat-sub" id="stat-score-sub"></div></div>
+      <div class="card stat-card"><div class="stat-value" id="stat-attendance">—</div><div class="stat-label">Attendance rate</div></div>
+      <div class="card stat-card"><div class="stat-value" id="stat-atrisk">—</div><div class="stat-label">Students at risk</div><div class="stat-sub" id="stat-atrisk-sub"></div></div>
+    </section>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="atrisk-heading">
+        <h2 id="atrisk-heading">Students at risk</h2>
+        <div id="atrisk-list"><p class="muted">Loading…</p></div>
+      </section>
+
+      <section class="card" aria-labelledby="modules-heading">
+        <h2 id="modules-heading">Completion by module</h2>
+        <div id="module-bars"><p class="muted">Loading…</p></div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">Recent activity</h2>
+      <ul class="clean-list" id="activity-list"><li class="muted">Loading…</li></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>LabTrack v2 — Node.js + Express API, SQLite database, session auth. Data: fictional seed students for demo.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

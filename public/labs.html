@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labs &amp; Curriculum — LabTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('labtrack-theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">LabTrack</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="labs.html">Labs &amp; Curriculum</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="user-chip"><span id="nav-username"></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button><button id="logout-btn" class="secondary small" type="button">Log out</button></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Labs &amp; Curriculum</h1>
+    <p class="page-subtitle">Lab templates organised by diploma module — assign them to a student or a whole cohort, then grade the work below.</p>
+    <p id="page-error" class="error" role="alert" hidden></p>
+
+    <section class="card" aria-labelledby="templates-heading">
+      <h2 id="templates-heading">Curriculum templates</h2>
+      <div id="modules-list"><p class="muted">Loading…</p></div>
+    </section>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="add-template-heading">
+        <h2 id="add-template-heading">Add a lab template</h2>
+        <form class="form-row" id="add-template-form">
+          <label>
+            Module
+            <select id="template-module" required></select>
+          </label>
+          <label>
+            Title
+            <input type="text" id="template-title" placeholder="e.g. Async JavaScript" required>
+          </label>
+          <label>
+            Description
+            <input type="text" id="template-description" placeholder="What the student builds">
+          </label>
+          <button type="submit">Add template</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="add-module-heading">
+        <h2 id="add-module-heading">Add a module</h2>
+        <form class="form-row" id="add-module-form">
+          <label>
+            Name
+            <input type="text" id="module-name" placeholder="e.g. Testing" required>
+          </label>
+          <label>
+            Description
+            <input type="text" id="module-description" placeholder="What the module covers">
+          </label>
+          <button type="submit">Add module</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="instances-heading">
+      <h2 id="instances-heading">Assigned labs</h2>
+      <form class="form-row" id="lab-filter-form" style="margin-bottom:1rem">
+        <label>
+          Student
+          <select id="lab-filter-student"><option value="">All students</option></select>
+        </label>
+        <label>
+          Module
+          <select id="lab-filter-module"><option value="">All modules</option></select>
+        </label>
+        <label>
+          Status
+          <select id="lab-filter-status">
+            <option value="">All statuses</option>
+            <option value="not-started">Not started</option>
+            <option value="in-progress">In progress</option>
+            <option value="complete">Complete</option>
+          </select>
+        </label>
+        <label>
+          Search
+          <input type="search" id="lab-filter-search" placeholder="Lab title">
+        </label>
+        <button type="submit">Apply</button>
+      </form>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Lab</th><th>Student</th><th>Status</th><th>Score / 100</th><th></th></tr></thead>
+          <tbody id="lab-rows"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <p><button type="button" class="small" id="save-labs-btn">Save statuses &amp; scores</button></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>LabTrack v2 — Node.js + Express API, SQLite database, session auth.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="labs.js"></script>
+</body>
+</html>
