@@ -1,0 +1,138 @@
+{
+  "labs": [
+    {
+      "id": "lab-ava-1",
+      "status": "complete",
+      "studentId": "stu-ava-chen",
+      "title": "HTML & CSS Basics"
+    },
+    {
+      "id": "lab-ava-2",
+      "status": "complete",
+      "studentId": "stu-ava-chen",
+      "title": "JavaScript Fundamentals"
+    },
+    {
+      "id": "lab-ava-3",
+      "status": "in-progress",
+      "studentId": "stu-ava-chen",
+      "title": "DOM Manipulation"
+    },
+    {
+      "id": "lab-ava-4",
+      "status": "not-started",
+      "studentId": "stu-ava-chen",
+      "title": "React Components"
+    },
+    {
+      "id": "lab-liam-1",
+      "status": "complete",
+      "studentId": "stu-liam-okafor",
+      "title": "HTML & CSS Basics"
+    },
+    {
+      "id": "lab-liam-2",
+      "status": "in-progress",
+      "studentId": "stu-liam-okafor",
+      "title": "JavaScript Fundamentals"
+    },
+    {
+      "id": "lab-liam-3",
+      "status": "complete",
+      "studentId": "stu-liam-okafor",
+      "title": "Git & GitHub Workflow"
+    },
+    {
+      "id": "lab-maya-1",
+      "status": "complete",
+      "studentId": "stu-maya-patel",
+      "title": "HTML & CSS Basics"
+    },
+    {
+      "id": "lab-maya-2",
+      "status": "complete",
+      "studentId": "stu-maya-patel",
+      "title": "JavaScript Fundamentals"
+    },
+    {
+      "id": "lab-maya-3",
+      "status": "in-progress",
+      "studentId": "stu-maya-patel",
+      "title": "Node & Express API"
+    },
+    {
+      "id": "lab-maya-4",
+      "status": "not-started",
+      "studentId": "stu-maya-patel",
+      "title": "SQL Queries"
+    },
+    {
+      "id": "lab-noah-1",
+      "status": "in-progress",
+      "studentId": "stu-noah-tremblay",
+      "title": "HTML & CSS Basics"
+    },
+    {
+      "id": "lab-noah-2",
+      "status": "not-started",
+      "studentId": "stu-noah-tremblay",
+      "title": "Git & GitHub Workflow"
+    },
+    {
+      "id": "lab-sofia-1",
+      "status": "complete",
+      "studentId": "stu-sofia-rossi",
+      "title": "HTML & CSS Basics"
+    },
+    {
+      "id": "lab-sofia-2",
+      "status": "complete",
+      "studentId": "stu-sofia-rossi",
+      "title": "JavaScript Fundamentals"
+    },
+    {
+      "id": "lab-sofia-3",
+      "status": "complete",
+      "studentId": "stu-sofia-rossi",
+      "title": "REST API Testing"
+    },
+    {
+      "id": "lab-sofia-4",
+      "status": "in-progress",
+      "studentId": "stu-sofia-rossi",
+      "title": "Deployment Basics"
+    }
+  ],
+  "students": [
+    {
+      "cohort": "Fall 2026",
+      "email": "ava.chen@example.com",
+      "id": "stu-ava-chen",
+      "name": "Ava Chen"
+    },
+    {
+      "cohort": "Fall 2026",
+      "email": "liam.okafor@example.com",
+      "id": "stu-liam-okafor",
+      "name": "Liam Okafor"
+    },
+    {
+      "cohort": "Fall 2026",
+      "email": "maya.patel@example.com",
+      "id": "stu-maya-patel",
+      "name": "Maya Patel"
+    },
+    {
+      "cohort": "Winter 2027",
+      "email": "noah.tremblay@example.com",
+      "id": "stu-noah-tremblay",
+      "name": "Noah Tremblay"
+    },
+    {
+      "cohort": "Winter 2027",
+      "email": "sofia.rossi@example.com",
+      "id": "stu-sofia-rossi",
+      "name": "Sofia Rossi"
+    }
+  ]
+}
